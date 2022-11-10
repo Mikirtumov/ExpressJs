@@ -1,10 +1,14 @@
-// const lodash = require('lodash'); ----- 1 вариант
-const {get} = require('lodash'); //----- 2 вариант
-const a = {
-    name: 'Sergo'
-};
+const express = require('express');
+const app = express();
+const PORT = 3000;
 
-// const b = lodash.get(a, 'name','---'); ----- 1 вариант
-const b = get(a, 'name','---'); //----- 2 вариант
+const home = (req, res) => {res.send('Hello World!')}
 
-console.log('Hello', b)
+
+
+
+app.get('/',home)
+
+app.listen(PORT, () => {
+    console.log(`Example app listening ar port http://localhost:3000 ${PORT}`)
+})
